@@ -1,0 +1,24 @@
+package com.minephoenix.legacy.commands;
+
+import java.util.Map;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+
+import com.minephoenix.legacy.PlayerDataManager;
+import com.minephoenix.legacy.RPGGame;
+import com.rit.sucy.commands.ConfigurableCommand;
+import com.rit.sucy.commands.IFunction;
+
+public class SettingAdminSetPlayerStat implements IFunction {
+	@Override
+	public void execute(ConfigurableCommand command, Plugin plugin, CommandSender sender, String[] args) {
+		PlayerDataManager pdm = new PlayerDataManager();
+		pdm.setPlayerStat(Bukkit.getPlayer(args[0]), args[1], Double.parseDouble(args[2]), (RPGGame)plugin);
+		sender.sendMessage(ChatColor.AQUA+"Al jugador "+ args[0] +" se le ha seteado la habilidad " + args[1] + " en "+ args[2]);
+	}
+	
+}

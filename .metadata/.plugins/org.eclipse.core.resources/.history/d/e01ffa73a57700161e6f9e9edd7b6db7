@@ -1,0 +1,5 @@
+package com.minephoenix.legacy.commands;
+
+public class SettingAdminSetPlayerStat {
+
+}

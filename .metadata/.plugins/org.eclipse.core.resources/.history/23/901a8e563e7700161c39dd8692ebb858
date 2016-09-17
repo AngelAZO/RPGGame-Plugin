@@ -1,0 +1,13 @@
+package com.minephoenix.legacy.commands;
+
+import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.Plugin;
+
+import com.rit.sucy.commands.ConfigurableCommand;
+import com.rit.sucy.commands.IFunction;
+
+public class MagicCreateCommand implements IFunction {
+	public void execute(ConfigurableCommand command, Plugin plugin, CommandSender sender, String[] args) {
+		
+	}
+}

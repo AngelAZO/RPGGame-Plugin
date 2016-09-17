@@ -1,0 +1,5 @@
+name: RPGGame
+main: com.minephoenix.legacy.RPGGame
+depend: [MCCore]
+version: 1.0
+commands:

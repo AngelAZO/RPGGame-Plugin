@@ -1,0 +1,66 @@
+package com.minephoenix.legacy.commands;
+
+import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
+
+import com.rit.sucy.commands.ConfigurableCommand;
+import com.rit.sucy.commands.IFunction;
+
+import de.syranda.isvs.ValueSaver;
+import net.md_5.bungee.api.ChatColor;
+import think.rpgitems.api.RPGItems;
+import think.rpgitems.item.RPGItem;
+
+public class ForgeryCreateCommand implements IFunction {
+	
+	RPGItems rpgitems = new RPGItems();
+	
+	@Override
+	public void execute(ConfigurableCommand command, Plugin plugin, CommandSender sender, String[] args) {
+		Player player = (Player)sender;
+		ItemStack itemInHand = player.getItemOnCursor();
+		if (itemInHand == null) {
+			sender.sendMessage(ChatColor.RED+"Necesitas una herramienta de herrería.");
+			return;
+		}
+		RPGItem rpgitem = rpgitems.toRPGItem(itemInHand);
+		if (rpgitem == null) {
+			sender.sendMessage(ChatColor.RED+"Necesitas una herramienta de herrería. [RPGItem null]");
+			return;
+		}
+		
+		String itemUse = rpgitem.getHand();
+		String itemType = rpgitem.getType();
+		if (itemUse.equalsIgnoreCase("&7forja") && itemType.equalsIgnoreCase("&5herramienta")) {
+			Block StandingBlock = player.getLocation().getBlock();
+			if (StandingBlock.getType() == Material.IRON_BLOCK) {
+				BlockFace faces[] = {BlockFace.NORTH, BlockFace.EAST, BlockFace.WEST, BlockFace.SOUTH};
+				for (BlockFace face : faces) {
+					Block other = StandingBlock.getRelative(face);
+					if (other.getType() == Material.LAVA) {
+						Block upThing = other.getRelative(BlockFace.UP);
+						if (upThing.getType() == Material.IRON_FENCE) {
+							player.sendMessage(ChatColor.GREEN+"¡Exito!");
+						} else {
+							sender.sendMessage(ChatColor.RED+"Esta forja no está completa.");
+						}
+					} else {
+						sender.sendMessage(ChatColor.RED+"Esta forja no está completa.");
+					}
+				}
+				sender.sendMessage(ChatColor.RED+"Esta forja no está completa.");
+			} else {
+				sender.sendMessage(ChatColor.RED+"¡Necesitas estar en una forja para hacer eso!");
+			}
+		} else {
+			sender.sendMessage(ChatColor.RED+"Necesitas una herramienta de herrería.");
+		}
+	}
+
+}
