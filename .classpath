@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-API/target/spigot-api-1.9-R0.1-SNAPSHOT-shaded.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/AuthMe-5.2-BETA3-spigot.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/MCCore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/CoreAPI_1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/Magic-6.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/RPGitems-reloaded.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/panel-1.9-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/Spigot/Spigot/Spigot-Server/target/Test/plugins/Towny.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Angel/Desktop/PermissionsEx.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
